@@ -23,10 +23,17 @@ steps:
 
 - task: VSBuild@1
   inputs:
-    solution: '$(solution)'
+    solution: '**\*.sln'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+
+#- task: VSBuild@1
+#  inputs:
+#    solution: '$(solution)'
+#    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
+#    platform: '$(buildPlatform)'
+#    configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
   inputs:
