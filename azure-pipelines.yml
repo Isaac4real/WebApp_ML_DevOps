@@ -33,14 +33,15 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-
-#- task: PublishBuildArtifacts@1
-#  inputs:
-#    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#    ArtifactName: 'drop'
-#    publishLocation: 'Container'
-- task: PublishPipelineArtifact@1
+- task: PublishSymbols@2
+  displayName: 'Publish symbols path'
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'drop'
-    publishLocation: 'pipeline'
+    SearchPattern: '**\bin\**\*.pdb'
+    PublishSymbols: false
+  continueOnError: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
