@@ -12,7 +12,7 @@ namespace WebApplication2.Controllers
     {
         public IActionResult Index()
         {
-            var result = new Prediction() { predicted = MLtest.MLfunction(1,2)};
+            var result = new Prediction() { predicted = mainProgram.mainFunc(1,2)};
             return View(result);
         }
     }
