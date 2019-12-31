@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication2.Models
 {
-    public class Prediction
+    public class PredictionTaxiFare
     {
         public float predicted { get; set; }
     }

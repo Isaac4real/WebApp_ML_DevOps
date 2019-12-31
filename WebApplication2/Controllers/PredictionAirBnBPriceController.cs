@@ -8,11 +8,11 @@ using WebApplication2.ML;
 
 namespace WebApplication2.Controllers
 {
-    public class PredictionController : Controller
+    public class PredictionAirBnBPriceController : Controller
     {
         public IActionResult Index()
         {
-            var result = new Prediction() { predicted = mainProgram.mainFunc(1,2)};
+            var result = new PredictionAirBnBPrice() { predicted = AirBnBProgram2.AirBnBFunction2(1,2)};
             return View(result);
         }
     }
