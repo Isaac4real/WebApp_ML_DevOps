@@ -24,16 +24,24 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
+    msbuildArgs: /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:publishUrl="$(System.DefaultWorkingDirectory)\WebAppContent"
     platform: '$(BuildPlatform)'
     configuration: '$(BuildConfiguration)'
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)\WebAppContent'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
 
 #- task: VSBuild@1
 #  inputs:
-#    solution: '$(solution)'
+#    solution: '**\*.sln'
 #    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
-#    platform: '$(buildPlatform)'
-#    configuration: '$(buildConfiguration)'
+#    platform: '$(BuildPlatform)'
+#    configuration: '$(BuildConfiguration)'
+
 
 - task: VSTest@2
   inputs:
