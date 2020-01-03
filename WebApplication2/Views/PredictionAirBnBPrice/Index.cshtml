@@ -1,9 +1,16 @@
-﻿@model WebApplication2.Models.PredictionAirBnBPrice  
+﻿
+@model WebApplication2ML.Model.ModelInput
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@Model.predicted</h1>
+<h2>Predict Price</h2>
 
+<!--@using (Html.BeginForm())
+{
+    @Html.TextBoxFor(s => s.Availability_365)
+    <input type="submit" value="Generate report" />
+}
+-->

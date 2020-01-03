@@ -6,3 +6,13 @@
     <h1 class="display-4">Hi!!</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<button type="button" id="button_pred_airbnb" onclick="myFunction()">
+    <a class="text-dark" asp-area="" asp-controller="PredictionAirBnBPrice" asp-action="Index"> AirBnB Prediction Model!</a>
+</button>
+
+<script>
+    function myFunction() {
+        document.getElementById("button_pred_airbnb").style.backgroundColor = "green";
+    }
+</script>
