@@ -11,6 +11,10 @@
     AirBnB Prediction Model!
 </button>
 
+<button type="button" id="button_movie" onclick="@("window.location.href='" + @Url.Action("Random", "Movies") + "'");">
+    Movies!
+</button>
+
 <script>
     function myFunction() {
         document.getElementById("button_pred_airbnb").style.backgroundColor = "green";

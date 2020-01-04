@@ -8,9 +8,10 @@
 
 <h2>Predict Price</h2>
 
-@*@using (Html.BeginForm())
+@using (Html.BeginForm())
 {
     @Html.TextBoxFor(s => s.Availability_365)
-    <input type="submit" value="Generate report" />
+    <input type="submit" value="Predict Bitch!" />
 }
-*@
+
+<div> @Html.Encode(Model.Availability_365) </div>

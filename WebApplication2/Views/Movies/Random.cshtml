@@ -1,8 +1,93 @@
-﻿@model WebApplication2.Models.Movies
+﻿
+
+@model CalculateSimpleInterest.Models.Movies
+
 @{
     ViewData["Title"] = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@Model.Name</h1>
+@*<h2>Calulate Simple Interest</h2>
 
+    @using (Ajax.BeginForm("CalculateSimpleInterestResult","CalculateSimpleInterest",
+                                new AjaxOptions { UpdateTargetId = "divInterestDeatils" }))
+        {
+    
+*@
+ 
+@*NEED TO DO THIS SHIT USING PARTIAL VIEWS*@
+<form asp-controller="Movies" asp-action="CalculateSimpleInterestResult"
+      data-ajax="true" data-ajax-method="POST"
+      data-ajax-mode="replace" data-ajax-update="#thisone" data-ajax-loading="#spinner">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h4 class="modal-title">This Sheit!</h4>
+
+    </div>
+    <div id="thisone"></div>
+    <div class="modal-body">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Rate" class="control-label"></label>
+            <select asp-for="Rate" class="form-control">
+                <option value="">Choose</option>
+                <optgroup label="1" />
+                <option value="1">1</option>
+                <optgroup label="2" />
+                <option value="2">2</option>
+            </select>
+            <span asp-validation-for="Rate" class="text-danger"></span>
+        </div>
+        @*
+        <div class="form-group">
+            <label asp-for="Year" class="control-label"> fds </label>
+            <input asp-for="Year" class="form-control" type="date" />
+            <span asp-validation-for="Year" class="text-danger"></span>
+        </div>*@
+        <div class="form-group" align="center">
+            <input type="submit" value="Create" class="btn btn-info" id="sb" />
+        </div>
+
+    </div>
+</form>
+<div id="spinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i></div>
+
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+}
+
+
+@*
+    @model WebApplication2.Models.Movies
+    @{
+        ViewData["Title"] = "Random";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1>@Model.Name</h1>
+
+        <div id="successMessage"></div>
+        <button type="button" id="button_pred_airbnb">
+            AirBnB Prediction Model!
+        </button>
+
+        <script>
+            $(document).on('click', "#button_pred_airbnb", function () {
+                var nameText = "this";
+                var emailText = "this";
+                var messageText = "this";
+                $.post('@Url.Content("~/Controller/AJAXPostContactForm")',//the url to post to
+                    { name: nameText, email: emailText, message: messageText }, //these are values to be sent to the action
+                    function () { //this is the success function
+                        $("#successMessage").val("Form posted successfully.");
+                    }
+                )
+                    .fail(function () {//failure function
+                        alert("Something went wrong.");
+                    });
+            }
+        </script>
+*@

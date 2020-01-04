@@ -17,13 +17,14 @@ namespace WebApplication.Controllers
             return View(model);
         }
 
-        //[HttpPost]
-        //public ActionResult PredictPrice(ModelInput model)
-        //{
+        [HttpPost]
+        public ActionResult PredictPrice(ModelInput model)
+        {
             //var result = new PredictionAirBnBPrice() { predicted = AirBnBProgram2.AirBnBFunction2(1, 2) };
-        //    model
-        //    return View(result);
-        //}
+            //var thist = "<b>Interest :</b> ";
+            //return Content(model.Availability_365.ToString());
+            return View(model);
+        }
     }
 
 }
