@@ -15,11 +15,12 @@ namespace WebApplication2.Controllers
         public ActionResult Random()
         {
             Movies model = new Movies();
+            model.Amount = 0;
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult CalculateSimpleInterestResult(Movies model)
+        public ActionResult Random(Movies model)
         {
             /*
             decimal simpleInteresrt = (model.Amount * model.Year * model.Rate) / 100;
@@ -28,8 +29,9 @@ namespace WebApplication2.Controllers
             sbInterest.Append("<b>Rate :</b> " + model.Rate + "<br/>");
             sbInterest.Append("<b>Time(year) :</b> " + model.Year + "<br/>");
             sbInterest.Append("<b>Interest :</b> " + simpleInteresrt);*/
-
-            return Content(("< b > Amount : a Jet!</ b >").ToString());
+            model.Amount = 200;
+            return PartialView("_partialAjaxForm", model);
+            //return Content(("< b > Amount : a Jet!</ b >").ToString());
         }
 
         public IActionResult OnGetPartial()
