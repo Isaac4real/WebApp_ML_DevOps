@@ -7,17 +7,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<h2>Calulate Simple Interest</h2>
+<script>
+        $(document).on('click', "#tothejets", function () {
+            $.post('@Url.Content("~/Movies/Random")',//the url to post to
+                {@Model},
+                function () { //this is the success function
+                    $("#successMessage").val("Form posted successfully.");
+                }
+            )
+                .fail(function () {//failure function
+                    alert("Something went wrong.");
+                });
+        }
+</script>
 
-    @using (Ajax.BeginForm("CalculateSimpleInterestResult","CalculateSimpleInterest",
-                                new AjaxOptions { UpdateTargetId = "divInterestDeatils" }))
-        {
-
-*@
-
-@*NEED TO DO THIS SHIT USING PARTIAL VIEWS*@
-
-<form asp-controller="Movies" asp-action="Random"
+<form asp-controller="Movies" asp-action="OnGetPartial"
       data-ajax="true" data-ajax-method="POST"
       data-ajax-mode="replace" data-ajax-update="#ajaxresult" data-ajax-loading="#spinner">
     <div class="modal-header">
@@ -52,10 +56,18 @@
 
     </div>
 </form>
-<div id="ajaxresult">
-    @await Html.PartialAsync("_partialAjaxForm")
-</div>
+
+@*<div id="ajaxresult">
+    @await Html.PartialAsync("_partialAjaxForm.cshtml", Model)
+</div>*@
+
+<partial name="_partialAjaxForm.cshtml" />
+
+<button id="tothejets"> click heaaa biach</button>
+
 <div id="spinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i></div>
+
+
 
 @section scripts {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>

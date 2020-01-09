@@ -34,13 +34,14 @@ namespace WebApplication2.Controllers
             //return Content(("< b > Amount : a Jet!</ b >").ToString());
         }
 
+        [HttpPost]
         public IActionResult OnGetPartial()
         {
             Thread.Sleep(2000);
             return new PartialViewResult
             {
-                ViewName = "_HelloWorldPartial",
-                ViewData = this.ViewData
+                ViewName = "_partialAjaxForm"
+                //ViewData = this.ViewData
             };
         }
 
