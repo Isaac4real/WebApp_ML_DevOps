@@ -20,6 +20,7 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Random(Movies model)
         {
             /*
@@ -30,33 +31,16 @@ namespace WebApplication2.Controllers
             sbInterest.Append("<b>Time(year) :</b> " + model.Year + "<br/>");
             sbInterest.Append("<b>Interest :</b> " + simpleInteresrt);*/
             model.Amount = 200;
-            return PartialView("_partialAjaxForm", model);
+            return View(model);
             //return Content(("< b > Amount : a Jet!</ b >").ToString());
         }
 
         [HttpPost]
-        public IActionResult OnGetPartial()
+        [ValidateAntiForgeryToken]
+        public IActionResult UpdateViewData(Movies model)
         {
-            Thread.Sleep(2000);
-            return new PartialViewResult
-            {
-                ViewName = "_partialAjaxForm"
-                //ViewData = this.ViewData
-            };
+            return PartialView("PartialMovie.cshtml", model);
         }
-
-        /*
-        // GET: Movies/Random
-        public IActionResult Random()
-        {
-            var movie = new Movies() { Name = "Shrek!" };
-            return View(movie);
-        }
-
-        public void AJAXPostContactForm(string name, string email, string message)
-        {
-            
-        }*/
     }
 
 }

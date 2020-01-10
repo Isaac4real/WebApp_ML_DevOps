@@ -20,5 +20,9 @@
     <ProjectReference Include="..\WebApplication2ML.Model\WebApplication2ML.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Configure\" />
+  </ItemGroup>
+
 
 </Project>
