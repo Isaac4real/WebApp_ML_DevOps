@@ -41,6 +41,8 @@ namespace WebApplication2ML.Model
         [ColumnName("availability_365"), LoadColumn(8)]
         public float Availability_365 { get; set; }
 
+        public float Prediction { get; set; }
+
 
     }
 }
