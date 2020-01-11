@@ -22,7 +22,7 @@ namespace WebApplication.Controllers
         public ActionResult ViewAirBnB(ModelInput model)
         {
             model.Availability_365 = 200;
-            model.Prediction= AirBnBProgram2.AirBnBFunction2(1, 2);
+            model.Prediction= AirBnBProgram2.AirBnBFunction2(model);
 
             return View(model);
         }

@@ -13,21 +13,21 @@ using WebApplication2ML.Model;
 
 public static class AirBnBProgram2
     {
-        public static float AirBnBFunction2(int first, int second)
+        public static float AirBnBFunction2(ModelInput model)
         {
             // prep a single taxi trip
             var BookingSample = new ModelInput()
             {
-                Neighbourhood_group = "Cascais",
-                Neighbourhood = "Cascais e Estoril",
+                Neighbourhood_group =model.Neighbourhood_group,
+                Neighbourhood = model.Neighbourhood,
                 //Latitude=,
                 //Longitude= "-9.42571",
-                Room_type = "Entire home/apt",
-                Minimum_nights = 5,
-                Number_of_reviews = 30,
-                Reviews_per_month = 0.53f,
-                Calculated_host_listings_count = 1,
-                Availability_365 = 320,
+                Room_type = model.Room_type,
+                Minimum_nights = model.Minimum_nights,
+                Number_of_reviews = model.Number_of_reviews,
+                Reviews_per_month = model.Reviews_per_month,
+                Calculated_host_listings_count = model.Calculated_host_listings_count,
+                Availability_365 = model.Availability_365,
                 Price = 0 // actual fare for this book = 80
             };
 

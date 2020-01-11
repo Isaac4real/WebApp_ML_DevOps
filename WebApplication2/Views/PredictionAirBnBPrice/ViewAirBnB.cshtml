@@ -1,5 +1,4 @@
-﻿
-@model WebApplication2ML.Model.ModelInput
+﻿@model WebApplication2ML.Model.ModelInput
 
 @{
     ViewData["Title"] = "ViewAriBnB";
@@ -22,40 +21,86 @@
             });
         });
     </script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.js"></script>
 }
 
-<form id="partialform" asp-controller="PredictionAirBnBPrice" asp-action="ViewAirBnB" method="post" data-ajax-loading="#spinner">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-        <h4 class="modal-title">This Sheit!</h4>
+<div style="padding:20px;"></div>
+<form id="partialform" asp-controller="PredictionAirBnBPrice" asp-action="ViewAirBnB" method="post" data-ajax-loading="#spinner" style="width:34vw;margin-left:8vw">
 
-    </div>
-
-    <div class="modal-body">
+    <div class="col-md-12">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="Availability_365" class="control-label"></label>
-            <select asp-for="Availability_365" class="form-control">
-                <option value="">Choose</option>
-                <optgroup label="1" />
-                <option value="1">1</option>
-                <optgroup label="2" />
-                <option value="2">2</option>
-            </select>
-            <span asp-validation-for="Calculated_host_listings_count" class="text-danger"></span>
+        <div class="form-group row" style="flex-wrap:unset">
+            <label class="col-sm-5 col-form-label font-weight-bold">Neighbourhood Group</label>
+            <input list="neigroups" asp-for="Neighbourhood_group" class="form-control" placeholder="Pick the neighbourhood group">
+            <datalist id="neigroups">
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
         </div>
+        <div class="form-group row" style="flex-wrap:unset">
+            <label class="col-sm-5 col-form-label font-weight-bold">Neighbourhood</label>
+            <input list="neig" asp-for="Neighbourhood" class="form-control" placeholder="Pick the neighbourhood">
+            <datalist id="neig">
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
+        </div>
+        <div class="form-group row" style="flex-wrap:unset">
+            <label class="col-sm-5 col-form-label font-weight-bold">Type of Room</label>
+            <input list="Room_type" asp-for="Room_type" class="form-control" placeholder="Pick the the type of room">
+            <datalist id="Room_type">
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
+        </div>
+        <div class="form-group row" style="flex-wrap:unset">
+            <label class="col-sm-5 col-form-label font-weight-bold">Minimum number of Nights</label>
+            <input list="Minimum_nights" asp-for="Minimum_nights" class="form-control" placeholder="Choose the Minimum number of nights">
+            <datalist id="Minimum_nights">
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
+        </div>
+        <div class="form-group row" style="flex-wrap:unset">
+            <label class="col-sm-5 col-form-label font-weight-bold">Number of Reviews</label>
+            <input list="Number_of_reviews" asp-for="Number_of_reviews" class="form-control" placeholder="Pick the Number of Reviews">
+            <datalist id="Number_of_reviews">
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
+        </div>
+        <div class="form-group row" style="flex-wrap:unset">
+            <label class="col-sm-5 col-form-label font-weight-bold">Number of Reviews per month</label>
+            <input list="Reviews_per_month" asp-for="Reviews_per_month" class="form-control" placeholder="Pick the Number of Reviews per month">
+            <datalist id="Reviews_per_month">
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
+        </div>
+        <div class="form-group row" style="flex-wrap:unset">
+            <label class="col-sm-5 col-form-label font-weight-bold">Number of Counted host listings</label>
+            <input list="Calculated_host_listings_count" asp-for="Calculated_host_listings_count" class="form-control" placeholder="Pick the Number Counted host listings">
+            <datalist id="Calculated_host_listings_count">
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
+        </div>
+        <div class="form-group row" style="flex-wrap:unset">
+            <label class="col-sm-5 col-form-label font-weight-bold">Availability (number of days per year)</label>
+            <input id="avail" type="text" list="Availability_365" asp-for="Availability_365" class="form-control" placeholder="number of days">
+            <datalist id="Availability_365">
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
+        </div>
+
         <div class="form-group" align="center">
             <input type="submit" value="Create" class="btn btn-info" id="sb" />
         </div>
-
     </div>
 </form>
 
-<div id="partial">
+<div id="partial" style="position:absolute;top:20vw;left:70vw">
     <partial name="PartialViewAirBnB.cshtml" />
 </div>
 
