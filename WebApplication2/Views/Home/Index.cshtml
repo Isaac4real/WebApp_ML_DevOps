@@ -3,24 +3,47 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Hi!!</h1>
+    <h1 class="display-4">Welcome!!</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<button type="button" id="button_pred_airbnb" onclick="myFunction(); @("window.location.href='" + @Url.Action("ViewAirBnB", "PredictionAirBnBPrice") + "'");">
+<button type="button" onclick="@("window.location.href='" + @Url.Action("ViewAirBnB", "PredictionAirBnBPrice") + "'");">
     AirBnB Prediction Model!
 </button>
 
-<button type="button" id="button_movie" onclick="@("window.location.href='" + @Url.Action("Random", "Movies") + "'");">
+<button type="button"onclick="@("window.location.href='" + @Url.Action("Random", "Movies") + "'");">
     Movies!
 </button>
 
-<button type="button" id="button_movie" onclick="@("window.location.href='" + @Url.Action("Index", "Configure") + "'");">
+<button type="button"onclick="@("window.location.href='" + @Url.Action("Index", "Configure") + "'");">
     TestDropDownList!
 </button>
 
-<script>
-    function myFunction() {
-        document.getElementById("button_pred_airbnb").style.backgroundColor = "green";
-    }
-</script>
+<img src="~/Content/Artificial-Intelligence-Is-Not-Fake-1-1080x675.jpeg">
+
+<div style="
+    width: 20vw;
+    height: 9vw;
+    position: absolute;
+    top: 16vw;
+    background: #70f7ff;
+    opacity: 61%;
+    left: 15vw;
+    border-style: outset;
+    font-size:2.5vw;
+    text-align: center;
+"
+     class="highlight_text">AirBnB Price Prediction</div>
+<div style="
+    width: 20vw;
+    height: 9vw;
+    position: absolute;
+    top: 16vw;
+    background: #70f7ff;
+    opacity: 61%;
+    left: 62vw;
+    border-style: outset;
+    font-size:2.5vw;
+    text-align: center;
+"
+     class="highlight_text">Taxi Fare Prediction</div>

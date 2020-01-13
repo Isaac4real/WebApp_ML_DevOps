@@ -21,7 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\Content\" />
     <Folder Include="Views\Configure\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\Artificial-Intelligence-Is-Not-Fake-1-1080x675.jpeg" />
   </ItemGroup>
 
 
