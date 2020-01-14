@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.FastTree;
-using WebApplication2.ML;
 
 using WebApplication2ML.Model;
 

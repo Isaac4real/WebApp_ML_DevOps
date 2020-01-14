@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MvcDynamicDropdownList.Services;
 
 namespace WebApplication2
 {
@@ -26,7 +25,6 @@ namespace WebApplication2
         {
             services.AddControllersWithViews();
 
-            services.AddSingleton<ConfigureService>();
 
 
         }

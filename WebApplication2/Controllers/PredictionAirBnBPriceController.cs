@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2ML.Model;
-using WebApplication2.ML;
 
 namespace WebApplication.Controllers
 {
