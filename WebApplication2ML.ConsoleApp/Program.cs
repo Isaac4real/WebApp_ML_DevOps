@@ -11,7 +11,7 @@ namespace WebApplication2ML.ConsoleApp
     class Program
     {
         //Dataset to use for predictions 
-        private const string DATA_FILEPATH = @"C:\Users\ireis\source\repos\web_app_test_2\WebApplication2\Data\listingsAirBnB_Lisbon_v2.csv";
+        private const string DATA_FILEPATH = @"C:\Users\ireis\source\repos\web_app_test_22\WebApplication2\Data\listingsAirBnB_Lisbon_v2.csv";
 
         static void Main(string[] args)
         {
