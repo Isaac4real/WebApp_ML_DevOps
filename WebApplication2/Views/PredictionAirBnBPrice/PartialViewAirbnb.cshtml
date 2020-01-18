@@ -1,11 +1,28 @@
 ﻿
 @model WebApplication2ML.Model.ModelInput
 
+
+
+
 @{
 
     if (Model.Prediction != null && Model.Prediction != 0)
     {
-        <p> Hi!! the amount is @Model.Prediction.</p>
+        <img src="~/Content/Airbnb-Logo.png" style="
+            width: 5vw;
+            top: -11vw;
+            position: absolute;
+            left: 3vw;">
+
+        <div style=
+               "text-transform: uppercase;
+                background-color: #ff878b;
+                color: white;
+                font-weight: bold;
+                text-align: center;
+                font-size: 1.5vw;
+                width: 11vw;"> @Model.Prediction. €
+        </div>
     }
 
 }

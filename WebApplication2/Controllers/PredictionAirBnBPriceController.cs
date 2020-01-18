@@ -17,7 +17,6 @@ namespace WebApplication.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult ViewAirBnB(ModelInput model)
         {
             model.Availability_365 = 200;
@@ -27,7 +26,6 @@ namespace WebApplication.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult UpdateViewData(ModelInput model)
         {
             return PartialView("PartialViewAirBnB.cshtml", model);

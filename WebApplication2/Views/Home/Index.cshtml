@@ -4,36 +4,52 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome!!</h1>
-    <p>This web app contains a ...</p>
 </div>
 
-<img src="~/Content/Artificial-Intelligence-Is-Not-Fake-1-1080x675.jpeg">
+<div style="position:relative">
+    <img src="~/Content/Artificial-Intelligence-Is-Not-Fake-1-1080x675.jpeg">
 
-<a onclick="@("window.location.href='" + @Url.Action("ViewAirBnB", "PredictionAirBnBPrice") + "'");">
-    <div style="
-    width: 20vw;
-    height: 9vw;
-    position: absolute;
-    top: 16vw;
-    background: #70f7ff;
-    opacity: 61%;
-    left: 15vw;
-    border-style: outset;
-    font-size:2.5vw;
-    text-align: center;
-    "
-    class="highlight_text">AirBnB Price Prediction</div>
-</a>
-<div style="
-    width: 20vw;
-    height: 9vw;
-    position: absolute;
-    top: 16vw;
-    background: #70f7ff;
-    opacity: 61%;
-    left: 62vw;
-    border-style: outset;
-    font-size:2.5vw;
-    text-align: center;
-"
-     class="highlight_text">About</div>
+    <a onclick="@("window.location.href='" + @Url.Action("ViewAirBnB", "PredictionAirBnBPrice") + "'");">
+        <div style="
+            width: 20vw;
+            height: 9vw;
+            position: absolute;
+            top: 0px;
+            background: #70f7ff;
+            opacity: 61%;
+            left: 0px;
+            border-style: solid;
+            border-color: #bbfaff;
+            border-width: 0px 5px 7px 1px;
+            font-size:2.5vw;
+            z-index:1000;
+            text-align: center;
+            font-family: monospace;
+            align-items: center;
+            justify-content: center;
+            display: flex;"
+             class="highlight_text">AirBnB Price Prediction
+        </div>
+    </a>
+
+    <div style="        width: 20vw;
+        height: 9vw;
+        position: absolute;
+        top: 0px;
+        background: #70f7ff;
+        opacity: 61%;
+        left: 36.2vw;
+        z-index: 1000;
+        font-size: 2.5vw;
+        text-align: center;
+        border-style: solid;
+        border-color: #bbfaff;
+        border-width: 0px 1px 7px 5px;
+        font-family: monospace;
+        align-items: center;
+        justify-content: center;
+        display: flex;"
+        class="highlight_text">About
+    </div>
+
+</div>
